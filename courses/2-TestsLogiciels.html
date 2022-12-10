@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Chap 2 - Tests logiciels</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Chap 2 : Tests logiciels</h2>
+
+					<div class="img-row">					
+						<img src="../img/iut.jpg" />
+						<div>
+							<p style="font-size: 16px">M4104 - PEL : Agilité et bonnes pratiques de programmation</p>
+							<p style="font-size: 16px">Institut Universitaire de Technologie de Bayonne et du Pays Basque</p>
+							<p style="font-size: 16px">Robin Lucbernet - Christophe Marquesuzaà - Damien Urruty</p>
+							<p style="font-size: 16px">DUT Informatique 2021 / 2022 - Semestre 4</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Pourquoi tester ?</h2>
+					<img src="../img/tester-c-est-douter.jpg" />
+				</section>
+				<section>
+					<h2>Approche boite noire</h2>
+					<img src="../img/blackbox-testing.png" />
+				</section>
+				<section>
+					<h2>Approche boite blanche</h2>
+					<img src="../img/whitebox-testing.jpeg" />
+				</section>
+				<section>
+					<h2>Types de tests</h2>
+					<ul>
+						<li>Tests unitaires</li>
+						<li>Tests d'intégration / service</li>
+						<li>Tests end-to-end</li>
+						<li>Tests d'acceptance</li>
+						<li>Tests de fumée <span class="translation">(Smoke test)</span></li>
+						<li>Tests exploratoires</li>
+						<li>Tests de performance</li>
+						<li>Tests manuels</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests unitaires</h2>
+					<ul>
+						<li>Vérifient le bon fonctionnement d'un morceau de code (unité)</li>
+						<li>Ecrits avec du code</li>
+						<li>4 phases pour chaque test
+							<ul>
+								<li>Initialisation</li>
+								<li>Exercice</li>
+								<li>Vérification</li>
+								<li>Démontage</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests unitaires - Caractéristiques</h2>
+					<ul>
+						<li>S'exécutent très rapidement (quelques ms par test -> plusieurs secondes au total)</li>
+						<li>Ecrits pour les programmeurs (souvent par les programmeurs)</li>
+						<li>En général testent de la technique mais peuvent tester du fonctionnel</li>
+						<li>Servent de documentation</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests d'intégration/service</h2>
+					<ul>
+						<li>Vérifient le bon assemblage de plusieurs composants</li>
+						<li>Ecrits pour les programmeurs (souvent par les programmeurs)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests end-to-end</h2>
+					<ul>
+						<li>Vérifient le bon fonctionnement du logiciel</li>
+						<li>Ecrits pour le client et les programmeurs</li>
+						<li>Exercent l'UI tel un utilisateur</li>
+						<li>S'exécutent plus lentement (quelques secondes par test -> plusieurs minutes au total)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests d'acceptance</h2>
+					<ul>
+						<li>Vérifient qu'une fonctionnalité fonctionne comme elle le devrait</li>
+						<li>Ecrits pour le client et les programmeurs</li>
+						<li>Peuvent se trouver plus ou moins proches du code</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests de fumée</h2>
+					<ul>
+						<li>Vérifient le logiciel dans les cas simples</li>
+						<li>Le nom provient du hardware</li>
+						<li>Tests manuels</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests de performance</h2>
+					<ul>
+						<li>Tests manuels</li>
+						<li>Utilisation processeur</li>
+						<li>Utilisation mémoire</li>
+						<li>Utilisation disque</li>
+						<li>Montée en charge</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests manuels</h2>
+					<ul>
+						<li>Réalisé en général par des testeurs</li>
+						<li>Suivent en général un plan de test</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Attention !</h2>
+					<blockquote>"Testing shows the presence, not the absence of bugs."<footer>- E. Dijkstra</footer></blockquote>
+				</section>
+				<section>
+					<img src="../img/qa_tests.png" />
+					<h4>=> Il faut se mettre dans la peau de l'utilisateur !</h4>
+				</section>
+				<section>
+					<h2>Pyramide de tests</h2>
+					<img src="../img/test-pyramid.png" />
+				</section>
+				<section>
+					<h2>Pyramide de tests</h2>
+					<ul>
+						<li class="fragment">Eviter la duplication</li>
+						<li class="fragment">Pousser les tests vers le bas</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Mauvaise pratique : le cône de glace</h2>
+					<img src="../img/ice-cone.png" />
+				</section>
+				<section>
+					<h2>Tests unitaires (avec JUnit)</h2>
+					<img src="../img/unit-test-code.jpg" />
+				</section>
+				<section>
+					<h2>Nous allons utiliser ce projet comme exemple</h2>
+					<a href="https://github.com/la-urre/code-smells">https://github.com/la-urre/code-smells</a>
+				</section>
+				<section>
+					<h2>Assertions</h2>
+					<h3>Vérification d'une condition, d'un état particulier</h3>
+					<h3>Au moins une assertion par cas de test !</h3>
+					<img src="../img/no-assertion.jpg" />
+				</section>
+				<section>
+					<h2>Assertions (JUnit)</h2>
+					<pre><code data-noescape class="language-java">
+assertEquals(expectedValue, actualValue);
+					</code></pre>
+					<h3>Privilégier la bibliothèque AssertJ pour des assertions proches du langage naturel <span class="translation">(fluent)</span></h3>
+					<pre><code data-noescape class="language-java">
+assertThat(actualValue).isEqualTo(expected);
+assertThat(actualList).contains(value);
+					</code></pre>
+				</section>
+				<section>
+					<h2>Un test se décompose en 3 parties</h2>
+					<ul>
+						<li>Etant donné <span class="translation">(Given/Arrange)</span> un état initial</li>
+						<li>Lorsque <span class="translation">(When/Act)</span> on réalise quelque chose</li>
+						<li>Alors <span class="translation">(Then/Assert)</span> on s'attend à un certain état final</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Given / When / Then</h2>
+					<pre><code data-noescape class="language-java">
+@Test
+void it_should_cost_74_for_one_beer() {
+    // GIVEN
+    Pub pub = new Pub();
+
+    // WHEN
+    int totalAmount = pub.printReceipt("hansa", false, 1);
+
+    // THEN
+    assertThat(totalAmount).isEqualTo(74);
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Cas de test <span class="translation">(Test case)</span></h2>
+					<pre><code data-noescape class="language-java">
+@Test
+void it_should_cost_74_for_one_beer() {
+    // ARRANGE
+    Pub pub = new Pub();
+
+    // ACT
+    int totalAmount = pub.printReceipt("hansa", false, 1);
+
+    // ASSERT
+    assertThat(totalAmount).isEqualTo(74);
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Cas de test <span class="translation">(Test case)</span></h2>
+					<ul>
+						<li>Privilégier le snake_case</li>
+						<li>Espacer les Given / When / Then</li>
+						<li>Un cas de test doit être assez court (max 7-8 lignes)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Suite de test <span class="translation">(Test suite)</span></h2>
+					<ul>
+						<li>Permet de grouper les tests</li>
+						<li>En général une suite de test par classe</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Montage / Démontage <span class="translation">(Set up / Tear down)</span></h3>
+					<h4>Méthodes exécutées avant / après chaque cas de test</h4>
+					<pre><code data-noescape class="language-java">
+@BeforeEach
+public void setUp() {
+    // initialisations
+}
+
+@AfterEach
+public void tearDown() {
+    // nettoyages
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Couverture de code</h2>
+				</section>
+				<section>
+					<h2>La couverture de code, c'est quoi ?</h2>
+					<ul>
+						<li>Mesure qui permet de voir la proportion de code de production exécutée par les tests</li>
+						<li>S'exprime en général en pourcentage</li>
+						<li>Permet de s'assurer qu'un morceau de code est couvert par les tests</li>
+						<li>Dans certains IDEs on peut voir la couverture pour chaque ligne de code</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Couverture de test</h2>
+					<h3>100% n'est pas un objectif</h3>
+					<h3>100% de couverture ne veut pas dire pas de bug</h3>
+				</section>
+				<section>
+					<h2>Tests unitaires et dépendances</h2>
+				</section>
+				<section>
+					<h2>Comment tester ce code ?</h2>
+					<pre><code data-noescape class="language-java">
+public int printReceipt(String drink, boolean student, int amount) {
+    // [...]
+    USBPrinter printer = new USBPrinter("/dev/ttyUSB0");
+    printer.print(drink, student, amount, price*amount);
+    // [...]
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Doublure de test <span class="translation">(Test Double)</span></h2>
+					<img src="../img/test-double.jpg" />
+				</section>
+				<section>
+					<h2>Pourquoi ?</h2>
+					<ul>
+						<li>Parfois on ne veut pas exécuter une partie de code pendant le test (envoi de mail, base de données, réseau, ...)</li>
+						<li>On remplace donc l'implémentation réelle d'un module par une fausse implémentation</li>
+						<li>Meilleure performance en utilisant une doublure</li>
+						<li>On utilise le type de doublure le plus adapté en fonction des cas</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Comment ?</h2>
+					<ul>
+						<li>Il suffit d'implémenter une interface pour pouvoir avoir plusieurs implémentations</li>
+						<li>Une dite de "production", une (ou plusieurs) de test</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Bouchon <span class="translation">(Stub)</span></h2>
+					<ul>
+						<li>Permet de pré-configurer les futures réponses du module doublure</li>
+						<li>Utile pour une base de données, un appel réseau, une saisie utilisateur...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Espion <span class="translation">(Spy)</span></h2>
+					<ul>
+						<li>Implémentation qui enregistre les interactions avec le module</li>
+						<li>Permet de récupérer les interactions passées</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Factice <span class="translation">(Dummy)</span></h2>
+					<ul>
+						<li>Doublure qui ne fait rien de particulier</li>
+						<li>Utile pour créer une doublure minimale dont on ne se sert pas vraiment</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Faux <span class="translation">(Fake)</span></h2>
+					<ul>
+						<li>Implémentation qui fonctionne mais qui prend des raccourcis</li>
+						<li>Exemple : une base de données en mémoire</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Simulacre <span class="translation">(Mock)</span></h2>
+					<ul>
+						<li>Permet de pré-configurer les futures réponses du module doublé (comme le bouchon)...</li>
+						<li>... et de vérifier les interactions en fin de test (comme l'espion)</li>
+						<li>Des bibliothèques peuvent aider comme par exemple Mockito</li>
+					</ul>
+				</section>
+				<section>
+					<h3>En réalité la distinction est rarement faite et on parle de "mocks" dans tous les cas</h3>
+				</section>
+				<section>
+					<h2>Automatisation des tests</h2>
+					<ul>
+						<li class="fragment">Servent comme filet de sécurité (harnais de test)</li>
+						<li class="fragment">Vérifient la non-régression</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.I.R.S.T.</h2>
+					<h3>Bonnes pratiques pour l'écriture de tests</h3>
+				</section>
+				<section>
+					<h2>Tests <b>F</b>.I.R.S.T.</h2>
+					<h3>Rapides <span class="translation">(Fast)</span></h3>
+					<ul>
+						<li class="fragment">Des tests trop longs freinent le développeur</li>
+						<li class="fragment">Plus le nombre de tests est important, plus les tests doivent être rapides</li>
+						<li class="fragment">Une durée idéale est quelques millisecondes par test</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.<b>I</b>.R.S.T.</h2>
+					<h3>Isolés / Indépendants <span class="translation">(Isolated / Independent)</span></h3>
+					<ul>
+						<li class="fragment">Un test doit vérifier un et un seul comportement</li>
+						<li class="fragment">Pas de dépendance sur l'ordre d'exécution</li>
+						<li class="fragment">Pas de dépendance sur l'environnement</li>
+						<li class="fragment">Permet de lancer les tests en parallèle</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.I.<b>R</b>.S.T.</h2>
+					<h3>Répétables <span class="translation">(Repeatable)</span></h3>
+					<ul>
+						<li class="fragment">Pas de dépendance sur l'environnement</li>
+						<li class="fragment">Comportement déterministe (pas de test dépendant du temps ou de l'aléatoire)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.I.R.<b>S</b>.T.</h2>
+					<h3>Auto-Validant <span class="translation">(Self-Validating)</span></h3>
+					<ul>
+						<li class="fragment">Pas besoin d'intervention manuelle</li>
+						<li class="fragment">Un test passe ou échoue, pas d'autre état possible</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.I.R.S.<b>T</b>.</h2>
+					<h3>Exhaustifs / Au bon moment <span class="translation">(Thorough / Timely)</span></h3>
+					<ul>
+						<li class="fragment">Cas nominaux</li>
+						<li class="fragment">Cas alternatifs</li>
+						<li class="fragment">Cas d'erreur (mauvais paramètres, ...)</li>
+						<li class="fragment">De préférence écrits avant le code qui va avec</li>
+						<li class="fragment">A relier avec le diagramme des cas d'utilisation UML et ses scénarios (CDCF)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Complément: Desiderata des tests</h2>
+					<a href="https://medium.com/@kentbeck_7670/test-desiderata-94150638a4b3">https://medium.com/@kentbeck_7670/test-desiderata-94150638a4b3</a>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				pdfSeparateFragments: false,
+				slideNumber: true,
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+			});
+		</script>
+	</body>
+</html>

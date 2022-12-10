@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Chap 6 - Test-Driven Development</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Chap 6 : Test-Driven Development</h2>
+
+					<div class="img-row">
+						<img src="../img/iut.jpg" />
+						<div>
+							<p style="font-size: 16px">M4104 - PEL : Agilité et bonnes pratiques de programmation</p>
+							<p style="font-size: 16px">Institut Universitaire de Technologie de Bayonne et du Pays Basque</p>
+							<p style="font-size: 16px">Robin Lucbernet - Christophe Marquesuzaà - Damien Urruty</p>
+							<p style="font-size: 16px">DUT Informatique 2021 / 2022 - Semestre 4</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Origines</h2>
+					<div class="img-row">
+						<ul>
+							<li>Test-Driven Development (TDD) = Développement dirigé par les tests</li>
+							<li>Technique associée au mouvement eXtreme Programming (XP)</li>
+							<li>Popularisée par Kent Beck (encore lui) dans les années 2000</li>
+						</ul>
+						<img style="margin-left: 40px" src="../img/tdd-by-example.jpg" />
+					</div>
+				</section>
+				<section>
+					<h2>Test After : constat</h2>
+					<ul>
+						<li>Dans beaucoup d'entreprises on considère que le rôle du développeur est de développer...</li>
+						<li>... et le rôle du testeur est de tester (bien souvent après donc)</li>
+						<li>Développement et validation sont souvent décorrélés</li>
+						<li>eXtreme Programming incite à rapprocher les tests du développement, et pousse une approche "test-first"</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Test After : constat</h2>
+					<ul>
+						<li>Habituellement on écrit les tests après le code...</li>
+						<li>... si on y pense...</li>
+						<li>... si on a le temps...</li>
+						<li>... et ils sont bien souvent incomplets</li>
+						<li>De plus un défaut détecté tardivement coûte plus cher à corriger</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Test After : constat</h2>
+					<ul>
+						<li>Un défaut détecté tardivement coûte plus cher à corriger :</li>
+						<li>il faut arrêter ce qu'on est en train de faire</li>
+						<li>se remettre dans le contexte</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Test-Driven Development</h2>
+					<ul>
+						<li>Cycle itératif de développement</li>
+						<li>On fonctionne par "baby steps" (pas de bébé)</li>
+						<li>Chaque test est écrit avant le bout de code qu'il est sensé tester</li>
+					</ul>
+				</section>
+				<section>
+					<h2>La boucle du TDD</h2>
+					<img src="../img/tdd-cycle.jpg" />
+				</section>
+				<section>
+					<h2>Etape 1 - Red</h2>
+					<h3>Ecrire un test qui échoue</h3>
+					<ul>
+						<li>Il est important de le faire échouer pour s'assurer que le message d'échec est correct</li>
+						<li>On écrit un seul test à cette étape</li>
+						<li>Important ! On n'écrit aucune ligne de code de production à cette étape (sauf le minimum pour passer la compilation)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Etape 2 - Green</h2>
+					<h3>Faire passer le test</h3>
+					<ul>
+						<li>Un test qui échoue est une situation inconfortable...</li>
+						<li>... alors on le fait passer au vert le plus vite possible...</li>
+						<li>... c'est-à-dire avec le code le plus minimal possible (même moche !)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Etape 3 - Blue (en option)</h2>
+					<h3>Refactor</h3>
+					<ul>
+						<li>Une fois au vert, on peut prendre le temps de faire du refactoring</li>
+						<li>Cette étape n'est pas obligatoire</li>
+						<li>Il est même recommandé d'attendre d'avoir suffisamment de tests pour faire le bon refactoring</li>
+						<li>Comme d'habitude, refactoring veut dire que l'on ne touche pas au fonctionnel</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Etape 0 - Think</h2>
+					<ul>
+						<li>Bien comprendre le besoin et les différents scénarios</li>
+						<li>Etablir une liste de tests associés à ces scénarios</li>
+						<li>Le TDD est compatible avec une conception (souvent légère) en amont</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Apports du TDD</h2>
+					<img src="../img/tdd-chuck-norris.jpg" />
+				</section>
+				<section>
+					<h2>Couverture de code</h2>
+					<ul>
+						<li>Si l'on suit rigoureusement le cycle on obtient automatiquement une couverture maximale</li>
+						<li>Chaque branche de code est normalement couverte par un test dédié</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Documentation</h2>
+					<ul>
+						<li>Les tests servent de documentation pour le module testé</li>
+						<li>Chaque scénario/comportement est représenté par un test</li>
+						<li>Il est donc important de bien nommer les tests</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Confiance</h2>
+					<ul>
+						<li>Voir les tests passer au vert donne confiance dans ce que l'on développe</li>
+						<li>L'accumulation des tests permet d'estimer l'avancement</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Code fonctionnel à chaque étape</h2>
+					<ul>
+						<li>A la fin de chaque boucle on a du code qui fonctionne et qui correspond à de vrais cas d'usage</li>
+						<li>Cela permet de montrer des choses au client, même incomplètes</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Conception de qualité</h2>
+					<ul>
+						<li>Les tests mettent une pression continue sur la conception</li>
+						<li>Ils obligent à penser à l'interface (API) du module testé : on doit en effet utiliser le module avant même de l'avoir implémenté</li>
+						<li>Ils mènent à du code plus modulaire, flexible</li>
+						<li>S'il est compliqué/long d'écrire un test, c'est probablement que la conception est perfectible</li>
+						<li>Il faut donc "écouter" les tests : ce sont eux qui disent si le design est bon</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Non-régression</h2>
+					<ul>
+						<li>Tous les tests accumulés lors des différents cycles constituent un harnais de sécurité</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Débogage diminué</h2>
+					<ul>
+						<li>L'approche TDD diminue en général le besoin d'utiliser le débogueur</li>
+						<li>Si un bug est découvert, on démarre un nouveau cycle : écrire un test qui échoue, corriger le bug, puis refactor si besoin</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Attention !</h2>
+					<ul>
+						<li>Faire du Test-Driven Development nécessite beaucoup de pratique pour acquérir de la maitrise</li>
+						<li>Peuvent aider : coding dojos, katas, programmation en binome...</li>
+						<li>Requiert une certaine discipline pour respecter le cycle</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Exercice pratique : Roman Numerals Kata</h2>
+					<a href="http://codingdojo.org/kata/RomanNumerals/">http://codingdojo.org/kata/RomanNumerals/</a>
+					<ul>
+						<li>Convertir un nombre romain en nombre "normal"</li>
+						<li>Et vice-versa</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				pdfSeparateFragments: false,
+				slideNumber: true,
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+			});
+		</script>
+	</body>
+</html>

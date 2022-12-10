@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Chap 1 - Faire ce qu'il faut et le faire bien</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Chap 1 : Faire ce qu'il faut et le faire bien</h2>
+					<div class="img-row">					
+						<img src="../img/iut.jpg" />
+						<div>
+							<p style="font-size: 16px">M4104 - PEL : Agilité et bonnes pratiques de programmation</p>
+							<p style="font-size: 16px">Institut Universitaire de Technologie de Bayonne et du Pays Basque</p>
+							<p style="font-size: 16px">Robin Lucbernet - Christophe Marquesuzaà - Damien Urruty</p>
+							<p style="font-size: 16px">DUT Informatique 2021 / 2022 - Semestre 4</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Quel est le point commun entre</h2>
+					<div class="img-row">
+						<img src="../img/mars-climate-orbiter.jpg" />
+						<img src="../img/apple.jpg" />
+						<img src="../img/gandhi.jpg" />
+					</div>
+				</section>
+				<section>
+					<h2>Mars Climate Orbiter</h2>
+					<div class="horizontal">
+						<img class="left-img" src="../img/mars-climate-orbiter.jpg" />
+						<div>
+							<ul>
+								<li>Sonde écrasée sur Mars en 1999</li>
+								<li>Erreur causée par un problème d'unité (système métrique vs anglo-saxon)</li>
+								<li>Coût total : $327 millions</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<img class="left-img" src="../img/apple.jpg" />
+					<h2>Faille de sécurité Apple</h2>
+				</section>
+				<section>
+					<img src="../img/goto-fail-raw.jpg" />
+					<h4>Saurez-vous trouver la faille ?</h4>
+				</section>
+				<section>
+					<h2>Apple "goto fail"</h2>
+					<img src="../img/goto-fail.jpg" />
+				</section>
+				<section>
+					<h2>Apple goto fail</h2>
+					<ul>
+						<li>Faille dans la validation de certificats HTTPS (iOS et OS X)</li>
+						<li>Double goto court-circuitant des validations</li>
+						<li>Des millions de machines vulnérables</li>
+						<li>Volontaire ou involontaire ?</li>
+					</ul>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/gandhi.jpg" />
+						<div>
+							<h2>Gandhi dans le jeu</h2>
+							<img src="../img/civilization.png" />
+							<ul>
+								<li>Censé être le personnage le plus pacifique du jeu</li>
+								<li>A cause d'un integer underflow devient le plus aggressif</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Bug, bug, bug...</h3>
+					<ul>
+						<li>Ce ne sont que 3 exemples parmi des millions (voir M2204 et M3301 pour d'autres cas)</li>
+						<li>Il y aura toujours des comportements non prévus et des bugs...</li>
+					</ul>
+				</section>
+				<section>
+					<img class="r-stretch" src="../img/chaos_numbers.jpg" />
+					<h4>Chaos report (2015)</h4>
+				</section>
+				<section>
+					<h3>Bon alors, on fait quoi ?</h3>
+					<img src="../img/dont-know.gif" />
+				</section>
+				<section>
+					<h2>Un produit logiciel de qualité : c'est quoi ?</h2>
+				</section>
+				<section>
+					<h2>Qualité logicielle selon ISO 9126</h2>
+				</section>
+				<section>
+					<h2>Capacité fonctionnelle <span class="translation">(Functionality)</span></h2>
+					<ul>
+						<li>L’aptitude <span class="translation">(Suitability)</span></li>
+						<li>L’exactitude <span class="translation">(Accuracy)</span></li>
+						<li>L’interopérabilité <span class="translation">(Interoperability)</span></li>
+						<li>La conformité <span class="translation">(Compliance)</span></li>
+						<li>La sécurité <span class="translation">(Security)</span></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Facilité d’usage <span class="translation">(Usability)</span></h2>
+					<ul>
+						<li>L’exploitabilité <span class="translation">(Operability)</span></li>
+						<li>La facilité d’apprentissage <span class="translation">(Learnability)</span></li>
+						<li>La facilité de compréhension <span class="translation">(Understandability)</span></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Fiabilité <span class="translation">(Reliability)</span></h2>
+					<ul>
+						<li>La maturité <span class="translation">(Maturity)</span></li>
+						<li>La tolérance aux fautes <span class="translation">(Fault Tolerance)</span></li>
+						<li>La capacité de récupération <span class="translation">(Recoverability)</span></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Efficacité <span class="translation">(Efficiency)</span></h2>
+					<ul>
+						<li>L’efficacité des ressources employées <span class="translation">(Resource Behaviour)</span></li>
+						<li>L’efficacité des temps de réalisation <span class="translation">(Time Behaviour)</span></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Maintenabilité <span class="translation">(Maintainability)</span></h2>
+					<ul>
+						<li>La stabilité <span class="translation">(Stability)</span></li>
+						<li>La facilité de modification <span class="translation">(Changeability)</span></li>
+						<li>La facilité d’analyse <span class="translation">(Analysability)</span></li>
+						<li>La facilité à être testé <span class="translation">(Testability)</span></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Portabilité <span class="translation">(Portability)</span></h2>
+					<ul>
+						<li>La facilité d’installation <span class="translation">(Installability)</span></li>
+						<li>La facilité de migration <span class="translation">(Replaceability)</span></li>
+						<li>L’adaptabilité <span class="translation">(Adaptability)</span></li>
+					</ul>
+				</section>
+				<section>
+					<h3>On peut grouper ces catégories en 2 familles</span></h3>
+					<ul>
+						<li class="fragment">Build the right thing <span class="translation">(faire ce qu'il faut)</span>:
+							<ul>
+								<li>Capacité fonctionnelle</li>
+								<li>Facilité d'usage</li>
+							</ul>
+						</li>
+						<li class="fragment">Build the thing right <span class="translation">(faire bien)</span>:
+							<ul>
+								<li>Fiabilité</li>
+								<li>Efficacité</li>
+								<li>Maintenabilité</li>
+								<li>Portabilité</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Build the right thing</h2>
+					<img src="../img/do-the-right-thing.jpg" />
+				</section>
+				<section>
+					<h2>Ce qui va dans le logiciel est ce que les développeurs ont compris</h2>
+					<h3 class="fragment">=> Il faut rapprocher les demandeurs et les dévs</h3>
+				</section>
+				<section>
+					<h2>Quelques outils (1) : UX design</h2>
+					<h4>Quel est le problème que l'on cherche à résoudre ?</h4>
+				</section>
+				<section>
+					<h2>Quelques outils (1) : UX design</h2>
+					<img src="../img/ui-vs-ux.jpg" />
+				</section>
+				<section>
+					<h2>Quelques outils (1) : UX design</h2>
+					<h3>Exemple de discussion </h3>
+					<ul>
+						<li class="fragment">Client : J'ai besoin d'un logiciel pour extraire des informations d'un PDF</li>
+						<li class="fragment">Dév : Intéressant ! D'où vient ce besoin ?</li>
+						<li class="fragment">Client : Les commerciaux ramènent leurs bons de commande aux secrétaires...</li>
+						<li class="fragment">Client : qui les scannent et les font suivre au département Marchandises...</li>
+						<li class="fragment">Client : Nous voudrions pouvoir extraire ces informations pour anticiper les stocks</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Quelques outils (1) : UX design</h2>
+					<h3>Le but de cette démarche est de :</h3>
+					<ul>
+						<li class="fragment">comprendre le vrai besoin et les difficultés rencontrées par les utilisateurs</li>
+						<li class="fragment">proposer une solution adaptée</li>
+						<li class="fragment">Note : en général on ne va pas chez le médecin en lui annonçant le traitement que l'on veut</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Quelques outils (2) : <a href="https://www.eventstorming.com/" target="_blank">Event Storming</a></h2>
+					<img src="../img/event-storming.png" />
+				</section>
+				<section>
+					<h2>Quelques outils (2) : <a href="https://www.eventstorming.com/" target="_blank">Event Storming</a></h2>
+					<img src="../img/event-storming-example.jpg" />
+				</section>
+				<section>
+					<h2>Quelques outils (3) : Example mapping</h2>
+					<img src="../img/example-mapping.png" />
+				</section>
+				<section>
+					<h2>Quelques outils (3) : Example mapping</h2>
+					<img src="../img/example-mapping-example.jpg" />
+				</section>
+				<section>
+					<h2>Build the thing right</h2>
+					<img src="../img/do_the_thing_right.jpg" />
+				</section>
+				<section>
+					<h2>Build the thing right : comment ?</h2>
+					<ul>
+						<li class="fragment">Clean code (Maintenabilité)</li>
+						<li class="fragment">Tests (Stabilité, Fiabilité)</li>
+						<li class="fragment">Refactoring continu (Maintenabilité)</li>
+						<li class="fragment">Nous verrons ces techniques en détail dans les prochains chapitres</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Build the right thing & build the thing right</h3>
+					<img src="../img/ramsay.jpg" />
+				</section>
+				<section>
+					<h3>Est-ce que mon code répond au besoin ?</h3>
+					<h3>Est-ce que mon code est bien écrit ?</h3>
+				</section>
+				<section>
+					<h2>Boucles de feedback</h2>
+					<img src="../img/feedback_loops.png" style="width: 50%" />
+				</section>
+				<section>
+					<h2>Une solution possible</h2>
+					<h3>Livraisons très fréquentes (de une à quelques semaines)</h3>
+					<ul>
+						<li class="fragment">Réduit l'effet tunnel</li>
+						<li class="fragment">Fournit régulièrement un logiciel fonctionnel aux utilisateurs</li>
+						<li class="fragment">Raccourcit le feedback</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Développement itératif et incrémental</h2>
+					<ul>
+						<li class="fragment">Make it work - Make it clean - [Make it fast]</li>
+						<li class="fragment">Permet de supporter les livraisons fréquentes</li>
+						<li class="fragment">Réactivité au changement</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Revues de code</h2>
+					<img src="../img/revue-code.jpg" />
+				</section>
+				<section>
+					<h2>Revues de code</h2>
+					<ul>
+						<li class="fragment">Du code écrit par un développeur...</li>
+						<li class="fragment">... relu et commenté par un autre</li>
+						<li class="fragment">But : trouver des bugs, challenger le code/design, partager la connaissance</li>
+						<li class="fragment">Différents formats : formel, informel</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Revues de code</h2>
+					<h3>Programmation sans égo</h3>
+					<a href="https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming">blog.codinghorror.com/the-ten-commandments-of-egoless-programming</a>
+				</section>
+				<section>
+					<h2>Revues de code</h2>
+					<h4>Effet Dunning-Kruger</h4>
+					<img src="../img/effet_dunning_kruger.png" />
+				</section>
+				<section>
+					<h2>Pair programming</h2>
+					<img src="../img/batman_robin.jpg" />
+				</section>
+				<section>
+					<h3>Pair programming</h3>
+					<ul>
+						<li class="fragment">Un binôme qui travaille sur un même problème en même temps</li>
+						<li class="fragment">Avantages</li>
+						<ul>
+							<li class="fragment">Revue de code en direct</li>
+							<li class="fragment">Partage de connaissances (réduit le bus factor)</li>
+							<li class="fragment">Dans l'ensemble meilleure qualité</li>
+						</ul>
+						<li class="fragment">Différents modes de fonctionnement</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Pair programming - Driver/Navigator</h3>
+					<div class="horizontal">
+						<img src="../img/sparrow.jpg" />
+						<ul>
+							<li class="fragment">Un pilote qui s'occupe uniquement du clavier</li>
+							<li class="fragment">Un co-pilote qui donne des instructions de haut-niveau</li>
+							<li class="fragment">Des rotations très fréquentes (max toutes les 10min)</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h3>Pair programming - Strong style</h3>
+					<div class="horizontal">
+						<img src="../img/la-chose.gif" />
+						<ul>
+							<li class="fragment">Pour qu'une idée soit implémentée dans le code...</li>
+							<li class="fragment">...elle doit passer par les mains de quelqu'un d'autre</li>
+							<li class="fragment">Force le binôme à s'aligner sur les objectifs</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h3>Pair programming - Ping-pong</h3>
+					<div class="horizontal">
+						<img src="../img/ping-pong.jpg" />
+						<ul>
+							<li class="fragment">Le clavier passe de main en main très rapidement</li>
+							<li class="fragment">Habituellement utilisé en faisant du TDD</li>
+							<li class="fragment">Une personne écrit le test, une autre écrit l'implémentation</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>Mob programming</h2>
+					<img src="../img/avengers.jpg" />
+				</section>
+				<section>
+					<h2>Mob programming</h2>
+					<blockquote>"All the brilliant people, working on the same thing, at the same time, in the same space, and at the same computer."<footer>- Woody Zuill</footer></blockquote>
+				</section>
+				<section>
+					<h2>Mob programming</h2>
+					<h3>Pair programming sous stéroïdes</h3>
+					<a href="https://www.youtube.com/watch?v=dVqUcNKVbYg" target="_blank">Une journée type (youtube.com/watch?v=dVqUcNKVbYg)</a>
+				</section>
+				<section>
+					<h2>Amélioration continue</h2>
+					<img src="../img/level-up.jpg" />
+				</section>
+				<section>
+					<h2>Amélioration continue - Organisation</h2>
+					<ul>
+						<li class="fragment">Il est important de parfois s'arrêter et prendre du recul</li>
+						<li class="fragment">On parle de faire une rétrospective</li>
+						<li class="fragment">C'est l'occasion de voir ce qui a marché ou pas et ce que l'on peut améliorer</li>
+						<li class="fragment">Il faut le faire régulièrement pour que cela soit efficace</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Amélioration continue - Compétences</h2>
+					<li class="fragment">Les choses changent tellement vite dans notre métier</li>
+					<li class="fragment">Et c'est un domaine tellement vaste</li>
+					<li class="fragment">Il faut rester au niveau et s'améliorer (ne serait-ce que pour rester employable)</li>
+					<li class="fragment">Si on n'apprend plus on n'avance plus</li>
+				</section>
+				<section>
+					<h2>Amélioration continue - Compétences</h2>
+					<h4>Quelques recommandations</h4>
+					<ul>
+						<li>Lire des livres</li>
+						<li>Regarder des tutos vidéos</li>
+						<li>Aller à des conférences/meetups</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				pdfSeparateFragments: false,
+				slideNumber: true,
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+			});
+		</script>
+	</body>
+</html>

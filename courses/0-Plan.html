@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Chap 0 - Plan</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>M4104 - PEL : Agilité et bonnes pratiques de programmation</h2>
+
+					<div class="img-row">					
+						<img src="../img/iut.jpg" />
+						<div>
+							<p style="font-size: 16px">M4104 - PEL : Agilité et bonnes pratiques de programmation</p>
+							<p style="font-size: 16px">Institut Universitaire de Technologie de Bayonne et du Pays Basque</p>
+							<p style="font-size: 16px">Robin Lucbernet - Christophe Marquesuzaà - Damien Urruty</p>
+							<p style="font-size: 16px">DUT Informatique 2021 / 2022 - Semestre 4</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Pourquoi ce module ?</h2>
+					<ul>
+						<li class="fragment">Répondre aux attentes du monde professionnel</li>
+						<li class="fragment">Le legacy (code "hérité") est partout !</li>
+						<li class="fragment" style="font-style: italic">Build the right thing & Build the thing right</li>
+						<li class="fragment">Pratiquer sur un vrai projet</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Objectifs pédagogiques</h2>
+					<ul>
+						<li class="fragment">Travailler en équipe selon les principes de l'eXtreme Programming</li>
+						<li class="fragment">Reconnaitre du code sale</li>
+						<li class="fragment">Ecrire du code propre et testé</li>
+						<li class="fragment">Intervenir sur du code legacy</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				pdfSeparateFragments: false,
+				slideNumber: true,
+				hash: true,
+				plugins: [ RevealHighlight ],
+			});
+		</script>
+	</body>
+</html>
